@@ -18,3 +18,11 @@ class Loan:
             f"Book ID: {self.book_id}, "
             f"Status: {status}"
         )
+    
+    def to_dict(self):
+        return {
+            "loan_id": self.loan_id,
+            "member_id": self.member_id,
+            "book_id": self.book_id,
+            "returned": self.returned
+        }

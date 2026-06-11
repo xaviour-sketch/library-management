@@ -16,3 +16,10 @@ class Member(Person):
             f"Name: {self.name}, "
             f"Email: {self.email}"
         )
+    
+    def to_dict(self):
+        return {
+            "member_id": self.member_id,
+            "name": self.name,
+            "email": self.email
+        }

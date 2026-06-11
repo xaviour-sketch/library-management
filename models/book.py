@@ -18,3 +18,11 @@ class Book:
             f"Author: {self.author}, "
             f"Status: {status}"
         )
+    
+    def to_dict(self):
+        return {
+            "book_id": self.book_id,
+            "title": self.title,
+            "author": self.author,
+            "is_available": self.is_available
+        }

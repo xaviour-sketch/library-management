@@ -1,3 +1,4 @@
+import json
 from models.book import Book
 from models.member import Member
 from models.loan import Loan
@@ -80,3 +81,19 @@ class LibraryManager:
         book.is_available = True
 
         return loan
+    
+    def save_books(self):
+        books_data = [
+            book.to_dict()
+            for book in self.books
+        ]
+
+        with open(
+            "data/books.json",
+            "w"
+        ) as file:
+            json.dump(
+                books_data,
+                file,
+                indent=4
+            )

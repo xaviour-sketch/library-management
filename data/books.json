@@ -1,0 +1,14 @@
+[
+    {
+        "book_id": 1,
+        "title": "Harry Potter",
+        "author": "J.K. Rowling",
+        "is_available": true
+    },
+    {
+        "book_id": 2,
+        "title": "Narnia",
+        "author": "C.S. Lewis",
+        "is_available": true
+    }
+]
