@@ -57,3 +57,26 @@ class LibraryManager:
         book.is_available = False
 
         return loan
+    
+    def find_loan(self, loan_id):
+        for loan in self.loans:
+            if loan.loan_id == loan_id:
+                return loan
+
+        return None
+    
+    def return_book(self, loan_id):
+        loan = self.find_loan(loan_id)
+
+        if loan is None:
+            raise ValueError("Loan not found")
+
+        if loan.returned:
+            raise ValueError("Book already returned")
+
+        book = self.find_book(loan.book_id)
+
+        loan.returned = True
+        book.is_available = True
+
+        return loan
