@@ -2,14 +2,21 @@ from services.library_manager import LibraryManager
 
 manager = LibraryManager()
 
-manager.add_book(
+book = manager.add_book(
     "Harry Potter",
     "J.K. Rowling"
 )
 
-manager.add_book(
-    "Narnia",
-    "C.S. Lewis"
+member = manager.add_member(
+    "John",
+    "john@gmail.com"
 )
 
-manager.save_books()
+manager.borrow_book(
+    member.member_id,
+    book.book_id
+)
+
+manager.save_data()
+
+print("Data saved successfully!")

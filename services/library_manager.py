@@ -97,3 +97,34 @@ class LibraryManager:
                 file,
                 indent=4
             )
+
+    def save_members(self):
+        members_data = [
+            member.to_dict()
+            for member in self.members
+        ]
+
+        with open("data/members.json", "w") as file:
+            json.dump(
+                members_data,
+                file,
+                indent=4
+            )
+
+    def save_loans(self):
+        loans_data = [
+            loan.to_dict()
+            for loan in self.loans
+        ]
+
+        with open("data/loans.json", "w") as file:
+            json.dump(
+                loans_data,
+                file,
+                indent=4
+            )
+
+    def save_data(self):
+        self.save_books()
+        self.save_members()
+        self.save_loans()
