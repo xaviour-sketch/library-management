@@ -26,3 +26,15 @@ class Loan:
             "book_id": self.book_id,
             "returned": self.returned
         }
+    
+    @classmethod
+    def from_dict(cls, data):
+        loan = cls(
+            data["member_id"],
+            data["book_id"],
+            data["returned"]
+        )
+
+        loan.loan_id = data["loan_id"]
+
+        return loan

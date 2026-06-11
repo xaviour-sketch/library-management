@@ -128,3 +128,35 @@ class LibraryManager:
         self.save_books()
         self.save_members()
         self.save_loans()
+
+    def load_books(self):
+        with open("data/books.json", "r") as file:
+            books_data = json.load(file)
+
+        self.books = [
+            Book.from_dict(book)
+            for book in books_data
+        ]
+
+    def load_members(self):
+        with open("data/members.json", "r") as file:
+            members_data = json.load(file)
+
+        self.members = [
+            Member.from_dict(member)
+            for member in members_data
+        ]
+
+    def load_loans(self):
+        with open("data/loans.json", "r") as file:
+            loans_data = json.load(file)
+
+        self.loans = [
+            Loan.from_dict(loan)
+            for loan in loans_data
+        ]
+
+    def load_data(self):
+        self.load_books()
+        self.load_members()
+        self.load_loans()

@@ -2,21 +2,16 @@ from services.library_manager import LibraryManager
 
 manager = LibraryManager()
 
-book = manager.add_book(
-    "Harry Potter",
-    "J.K. Rowling"
-)
+manager.load_data()
 
-member = manager.add_member(
-    "John",
-    "john@gmail.com"
-)
+print("BOOKS")
+for book in manager.books:
+    print(book)
 
-manager.borrow_book(
-    member.member_id,
-    book.book_id
-)
+print("\nMEMBERS")
+for member in manager.members:
+    print(member)
 
-manager.save_data()
-
-print("Data saved successfully!")
+print("\nLOANS")
+for loan in manager.loans:
+    print(loan)

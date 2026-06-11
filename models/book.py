@@ -8,7 +8,27 @@ class Book:
         self.title = title
         self.author = author
         self.is_available = is_available
-        
+
+    def to_dict(self):
+        return {
+            "book_id": self.book_id,
+            "title": self.title,
+            "author": self.author,
+            "is_available": self.is_available
+        }
+
+    @classmethod
+    def from_dict(cls, data):
+        book = cls(
+            data["title"],
+            data["author"],
+            data["is_available"]
+        )
+
+        book.book_id = data["book_id"]
+
+        return book
+
     def __str__(self):
         status = "Available" if self.is_available else "Borrowed"
 
@@ -18,11 +38,3 @@ class Book:
             f"Author: {self.author}, "
             f"Status: {status}"
         )
-    
-    def to_dict(self):
-        return {
-            "book_id": self.book_id,
-            "title": self.title,
-            "author": self.author,
-            "is_available": self.is_available
-        }

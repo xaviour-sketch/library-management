@@ -23,3 +23,14 @@ class Member(Person):
             "name": self.name,
             "email": self.email
         }
+    
+    @classmethod
+    def from_dict(cls, data):
+        member = cls(
+            data["name"],
+            data["email"]
+        )
+
+        member.member_id = data["member_id"]
+
+        return member
