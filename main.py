@@ -1,8 +1,16 @@
-from models.person import Person
+from models.member import Member
 
-person = Person(
+member1 = Member(
     "John",
-    "banana"
+    "john@gmail.com"
 )
 
-print(person)
+member2 = Member(
+    "Mary",
+    "mary@gmail.com"
+)
+
+print(member1)
+print(member2)
+
+print("\nNext Member ID:", Member.id_counter)
