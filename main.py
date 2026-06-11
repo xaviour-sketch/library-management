@@ -1,14 +1,8 @@
-from models.book import Book
+from models.person import Person
 
-book1 = Book(
-    "Harry Potter",
-    "J.K. Rowling"
+person = Person(
+    "John",
+    "banana"
 )
 
-book2 = Book(
-    "Narnia",
-    "C.S. Lewis"
-)
-
-print(book1)
-print(book2)
+print(person)
