@@ -1,12 +1,10 @@
 class Loan:
-    def __init__(
-        self,
-        loan_id,
-        member_id,
-        book_id,
-        returned=False
-    ):
-        self.loan_id = loan_id
+    id_counter = 1
+
+    def __init__(self, member_id, book_id, returned=False):
+        self.loan_id = Loan.id_counter
+        Loan.id_counter += 1
+
         self.member_id = member_id
         self.book_id = book_id
         self.returned = returned

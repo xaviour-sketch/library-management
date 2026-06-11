@@ -1,16 +1,9 @@
-from models.member import Member
+from models.loan import Loan
 
-member1 = Member(
-    "John",
-    "john@gmail.com"
-)
+loan1 = Loan(1, 101)
+loan2 = Loan(2, 102)
 
-member2 = Member(
-    "Mary",
-    "mary@gmail.com"
-)
+print(loan1)
+print(loan2)
 
-print(member1)
-print(member2)
-
-print("\nNext Member ID:", Member.id_counter)
+print("\nNext Loan ID:", Loan.id_counter)
