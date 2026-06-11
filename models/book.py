@@ -1,10 +1,14 @@
 class Book:
-    def __init__(self, book_id, title, author, is_available=True):
-        self.book_id = book_id
+    id_counter = 1
+
+    def __init__(self, title, author, is_available=True):
+        self.book_id = Book.id_counter
+        Book.id_counter += 1
+
         self.title = title
         self.author = author
         self.is_available = is_available
-
+        
     def __str__(self):
         status = "Available" if self.is_available else "Borrowed"
 

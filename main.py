@@ -1,12 +1,14 @@
-from services.library_manager import LibraryManager
+from models.book import Book
 
-manager = LibraryManager()
-
-manager.add_book(
-    1,
+book1 = Book(
     "Harry Potter",
     "J.K. Rowling"
 )
 
-for book in manager.books:
-    print(book)
+book2 = Book(
+    "Narnia",
+    "C.S. Lewis"
+)
+
+print(book1)
+print(book2)
