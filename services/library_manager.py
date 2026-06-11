@@ -9,9 +9,16 @@ class LibraryManager:
         self.members = []
         self.loans = []
 
-    def add_book(self, book_id, title, author):
-        book = Book(book_id, title, author)
+    def add_book(self, title, author):
+        book = Book(title, author)
 
         self.books.append(book)
 
         return book
+    
+    def add_member(self, name, email):
+        member = Member(name, email)
+    
+        self.members.append(member)
+
+        return member

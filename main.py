@@ -1,9 +1,21 @@
-from models.loan import Loan
+from services.library_manager import LibraryManager
 
-loan1 = Loan(1, 101)
-loan2 = Loan(2, 102)
+manager = LibraryManager()
 
-print(loan1)
-print(loan2)
+manager.add_book(
+    "Harry Potter",
+    "J.K. Rowling"
+)
 
-print("\nNext Loan ID:", Loan.id_counter)
+manager.add_member(
+    "Mary",
+    "banana"
+)
+
+print("BOOKS")
+for book in manager.books:
+    print(book)
+
+print("\nMEMBERS")
+for member in manager.members:
+    print(member)
