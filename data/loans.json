@@ -3,6 +3,12 @@
         "loan_id": 1,
         "member_id": 1,
         "book_id": 1,
+        "returned": true
+    },
+    {
+        "loan_id": 2,
+        "member_id": 1,
+        "book_id": 1,
         "returned": false
     }
 ]
