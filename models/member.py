@@ -1,7 +1,7 @@
 from models.person import Person
 
 
-class Member(Person):
+class Member(Person): #Inheritance from Person class to member class
     id_counter = 1
 
     def __init__(self, name, email):
